@@ -1,8 +1,11 @@
 import _ from "lodash";
 
-export function parseNumbers(inputs) {
-  const numbers = inputs.map((value) => Number(value));
-  return numbers.filter((num) => !isNaN(num));
+export function parseNumbers(input) {
+  const numbers = _.map(input, (value) => Number(value));
+
+  const cleaned = _.compact(numbers);
+
+  return cleaned;
 }
 
 export function isValidOperation(operation) {
